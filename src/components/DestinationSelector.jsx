@@ -11,7 +11,7 @@ const DestinationSelector = ({ tours, onDestinationChange }) => {
     };
 
     // Extract unique tour names
-    const uniqueDestinations = [...new Set(tours.map((tour) => tour.name))];
+    const uniqueDestinations = ['All Destinations', ...new Set(tours.map((tour) => tour.name))];
 
     return (
         <div>
@@ -21,9 +21,8 @@ const DestinationSelector = ({ tours, onDestinationChange }) => {
                 value={selectedDestination}
                 onChange={handleChange}
             >
-                <option value="">--Choose a destination--</option>
                 {uniqueDestinations.map((destination) => (
-                    <option key={destination} value={destination}>
+                    <option key={destination} value={destination === 'All Destinations' ? '' : destination}>
                         {destination}
                     </option>
                 ))}
@@ -31,6 +30,7 @@ const DestinationSelector = ({ tours, onDestinationChange }) => {
         </div>
     );
 };
+
 DestinationSelector.propTypes = {
     tours: PropTypes.arrayOf(
         PropTypes.shape({
