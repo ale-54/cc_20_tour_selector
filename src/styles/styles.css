@@ -1,12 +1,13 @@
-/* General styles for tour cards */
 .tour-card {
   background-color: #d8ebfb;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: hidden; /* Prevent content from overflowing */
   margin: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 50%; /* Set a maximum width for the card */
+  text-align: left; /* Align text to the left */
 }
 
 .tour-card:hover {
@@ -15,53 +16,37 @@
 }
 
 .tour-card img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Ensure the image takes up the full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 700px; /* Set a maximum height for the image */
   border-bottom: 1px solid #ddd;
+  display: block;
 }
 
+.tour-card p {
+  margin: 16px 0; /* Add spacing around the paragraph */
+  line-height: 1.5; /* Improve readability */
+}
+
+.tour-card button {
+  margin-top: 10px; /* Add spacing above the button */
+}
+
+/* Prevent the card from expanding uncontrollably */
 .tour-card .content {
-  padding: 16px;
+  max-height: 300px; /* Set a maximum height for the content */
+  overflow-y: auto; /* Add a scrollbar if content exceeds the height */
 }
 
-.tour-card .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #333;
-}
-
-.tour-card .description {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 16px;
-}
-
-.tour-card .price {
-  font-size: 5rem;
-  font-weight: bold;
-  color: #2a9d8f;
-  margin-bottom: 16px;
-}
-
-/* Button styles */
-.tour-card .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #2a9d8f;
-  border: none;
+#destination-select {
+  width: 300px; /* Make the dropdown larger */
+  height: 40px; /* Increase height */
+  font-size: 1.2rem; /* Increase font size */
+  padding: 5px;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.tour-card .btn:hover {
-  background-color: #21867a;
+  background-color: #f9f9f9;
+  margin-top: 10px;
 }
 
 /* used copilot to create the tour explorer page */
